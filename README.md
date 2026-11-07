@@ -87,14 +87,18 @@ omarchy plugin disable omarchy.workspaces
 
 Update with `omarchy plugin update io.github.sanchokusika.workspace-styler`.
 
-<details>
-<summary><b>Going back to the stock widget</b></summary>
+## Remove
+
+Bring the stock widget back first, then remove the plugin:
 
 ```bash
 omarchy plugin enable omarchy.workspaces --section left --after io.github.sanchokusika.workspace-styler
-omarchy plugin disable io.github.sanchokusika.workspace-styler
+omarchy plugin remove io.github.sanchokusika.workspace-styler
 ```
-</details>
+
+The plugin only writes its own entry in `~/.config/omarchy/shell.json` (when you change a setting);
+removing it leaves the rest of your configuration untouched. No external dependencies: it uses
+`hyprctl` and Omarchy's own commands, both already on every Omarchy system.
 
 ## Configuration
 

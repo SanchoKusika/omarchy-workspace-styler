@@ -85,14 +85,17 @@ omarchy plugin disable omarchy.workspaces
 
 Обновление: `omarchy plugin update io.github.sanchokusika.workspace-styler`.
 
-<details>
-<summary><b>Вернуть стандартный виджет</b></summary>
+## Удаление
+
+Сначала верни стандартный виджет, потом удали плагин:
 
 ```bash
 omarchy plugin enable omarchy.workspaces --section left --after io.github.sanchokusika.workspace-styler
-omarchy plugin disable io.github.sanchokusika.workspace-styler
+omarchy plugin remove io.github.sanchokusika.workspace-styler
 ```
-</details>
+
+Плагин пишет только свою запись в `~/.config/omarchy/shell.json` (когда меняешь настройку),
+остальной конфиг не трогает. Внешних зависимостей нет: нужны только `hyprctl` и команды Omarchy.
 
 ## Конфигурация
 
